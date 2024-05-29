@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prymid_Generator</title>
+</head>
+<body>
+    <h1> Hello Pryamid!!</h1>
+</body>
+<script>
+
+    // This is the part of declaretion and assigning
+const character = "!";
+const count = 10;
+const rows = [];
+const inverted = true;
+
+// We need to create function that is going to help us to reuse code
+
+function PadRow(rowNumber, rowCount){
+    return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1)+ " ".repeat(rowCount - rowNumber);
+}
+
+/* Here there is loop that help to keep runing or excuting as long 
+condition is true or meet, whave defferent loops like for, while, do...while...
+ but here we use for loop*/
+
+for( let i = 1; i <= count; i++){
+    // here there is also if statement 
+
+    if(inverted){
+        rows.unshift(PadRow( i, count));
+    }
+    else{
+       rows.push(padRow(i, count)); 
+    }
+}
+
+let result = " "
+
+for(const row of rows ){
+    result = result + "\n" + row;
+}
+
+console.log(result);
+</script>
+</html>
